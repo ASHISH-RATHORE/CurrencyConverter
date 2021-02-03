@@ -1,0 +1,23 @@
+#login-form{
+    
+    display: flex;
+    flex-direction: column !important;
+    
+    /* justify-content: center !important;
+    align-items: center !important;     */
+    height: auto;
+    width: auto;
+    /* border: 2px solid red; */
+    margin: 10% 400px !important;
+    /* justify-content: center; */
+}
+
+
+section h1{
+    text-align: center;
+}
+
+body{
+    background-color: aqua;
+    background-repeat:no-repeat;
+}

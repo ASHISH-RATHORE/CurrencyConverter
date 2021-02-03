@@ -1,0 +1,11 @@
+.signup-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form Button{
+    margin-top: 15px;
+    background: transparent;
+    color: black;
+    border:1px solid black;
+}
