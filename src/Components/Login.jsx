@@ -2,6 +2,10 @@ import React, { Fragment,useState} from 'react';
 import TextField from '@material-ui/core/TextField';
 import {Button} from '@material-ui/core'; 
 import './Login.css';
+import GoogleLogin from 'react-google-login';
+
+// import GoogleAuth from './../GoogleOauth/GoogleAuth';
+
 import {Link} from 'react-router-dom'
 function Login() {
 
@@ -42,9 +46,23 @@ function Login() {
             alert('incorrect details');
         }
     }
+
+   
+
+
+
+    const  responseGoogle=(response)=>{
+       
+        console.log(response);
+        if(response){
+             window.localStorage.setItem('Status',true);
+           
+                window.location.assign('/Home');
+            }
+    }
     return (
         <section>
-            <h1>Welcome to Binge-Watch</h1>
+            <h1>Currency Converter</h1>
             <form  autoComplete="off" >
 
                 <div  id='login-form'>
@@ -53,9 +71,17 @@ function Login() {
   <Button type="submit" variant="outlined" color='secondary' margin='dense' onClick={handleSubmit}>
       Login
     </Button>
-    <h6>New User? <Link to='/Signup'  style={{textDecoration:'none'}}>Signup</Link></h6>
+    
+    <h6><Link to='/forgot'  style={{textDecoration:'none'}}>ForgotPassword? </Link><br/>
+    New User? <Link to='/Signup'  style={{textDecoration:'none'}}>Signup</Link></h6>
                 </div>
-  
+  <div>   <GoogleLogin clientId="907950932871-4tdb0lkt6er2gpjvi4dobr4neop0bvpm.apps.googleusercontent.com"
+            buttonText="Google Login"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            cookiePolicy="single_host_origin"
+            />
+</div>
   
 </form>
         </section>
